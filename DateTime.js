@@ -186,6 +186,9 @@ var Datetime = React.createClass({
 	onInputKey: function( e ){
 		if( e.which === 9 && this.props.closeOnTab ){
 			this.closeCalendar();
+		} else if (e.which === 13 && this.state.open) {
+			e.preventDefault()
+			this.closeCalendar();
 		}
 	},
 
